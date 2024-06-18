@@ -1,5 +1,5 @@
 {
-  "name": "base-name",
+  "name": "moderation",
   "intentsDependencies": [],
   "commandsDir": "commands",
   "componentsDir": "components",

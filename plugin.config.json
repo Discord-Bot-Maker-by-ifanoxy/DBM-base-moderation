@@ -1,0 +1,7 @@
+{
+  "name": "base-name",
+  "intentsDependencies": [],
+  "commandsDir": "commands",
+  "componentsDir": "components",
+  "eventsDir": "events"
+}

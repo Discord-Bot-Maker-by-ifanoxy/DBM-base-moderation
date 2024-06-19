@@ -1,6 +1,6 @@
 {
   "name": "moderation",
-  "intentsDependencies": [],
+  "intentsDependencies": [1, 4],
   "commandsDir": "commands",
   "componentsDir": "components",
   "eventsDir": "events"

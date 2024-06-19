@@ -10,7 +10,9 @@ export default class Plugin {
         this.loadTables();
     }
 
-    loadTables() {
+    async loadTables() {
         this.warns = loadWarnsTables(this.client.database);
+
+        await this.client.database.sync();
     }
 }

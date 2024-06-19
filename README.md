@@ -1,5 +1,5 @@
 ## Commands list
-
+```
 - warn <member> <reason>
 - warns remove <member> <warning>
 - warns remove-all <member>
@@ -11,3 +11,4 @@
 - softban <member> <?reason>
 - ban <member> <?delete-message> <?reason>
 - unban <member>
+```

@@ -7,8 +7,8 @@
     "description": "You can't ban this member",
     "color": 15879747
   },
-  "baned": {
+  "banned": {
     "color": 14090105,
-    "description": "member {member} was softbaned for the following reason *{reason}*"
+    "description": "member {member} was softbanned for the following reason *{reason}*"
   }
 }

@@ -9,7 +9,7 @@ export default {
     builder: new SlashCommandBuilder()
         .setName('softban')
         .setDescription('v a guild member')
-        .setDefaultMemberPermissions(PermissionsBitField.Flags.DeafenMembers)
+        .setDefaultMemberPermissions(PermissionsBitField.Flags.BanMembers)
         .setDMPermission(false)
         .addUserOption(
             user => user
@@ -39,7 +39,7 @@ export default {
         return targetMember.ban({reason, deleteMessageSeconds: 14 * 24 * 60 * 60})
             .then((m) => {
                 return interaction.reply({
-                    embeds: [ replaceEmbed(this.embeds.baned, ['{member}', '{reason}'], [targetMember.toString(), reason ?? 'No reason provided']) ]
+                    embeds: [ replaceEmbed(this.embeds.banned, ['{member}', '{reason}'], [targetMember.toString(), reason ?? 'No reason provided']) ]
                 });
                 interaction.guild.bans.remove(m.id);
             })

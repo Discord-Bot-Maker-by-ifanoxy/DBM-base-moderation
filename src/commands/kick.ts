@@ -8,7 +8,7 @@ export default {
     builder: new SlashCommandBuilder()
         .setName('kick')
         .setDescription('kick guild member')
-        .setDefaultMemberPermissions(PermissionsBitField.Flags.DeafenMembers)
+        .setDefaultMemberPermissions(PermissionsBitField.Flags.KickMembers)
         .setDMPermission(false)
         .addUserOption(
             user => user

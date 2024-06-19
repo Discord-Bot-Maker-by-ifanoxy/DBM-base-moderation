@@ -54,7 +54,7 @@ export default {
         return targetMember.ban({reason, deleteMessageSeconds: deleteMessage})
             .then((m) => {
                 return interaction.reply({
-                    embeds: [ replaceEmbed(this.embeds.baned, ['{member}', '{reason}'], [targetMember.toString(), reason ?? 'No reason provided']) ]
+                    embeds: [ replaceEmbed(this.embeds.banned, ['{member}', '{reason}'], [targetMember.toString(), reason ?? 'No reason provided']) ]
                 });
             })
             .catch(() => {

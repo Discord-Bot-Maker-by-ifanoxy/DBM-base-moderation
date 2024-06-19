@@ -61,7 +61,7 @@ export default {
                         .setRequired(true)
                 )
         ),
-    async autocomplete(client: DBMClient, plugin: Plugin, interaction: AutocompleteInteraction)
+    async autocomplete(client: DBMClient, interaction: AutocompleteInteraction, plugin: Plugin)
     {
         const focused = interaction.options.getFocused(true);
         switch (focused.name)
@@ -79,7 +79,7 @@ export default {
                 ))
                     .filter(x => x.name.includes(focused.value));
 
-                return interaction.respond(filtered.slice(25));
+                return interaction.respond(filtered.slice(0, 25));
             }
             case "warning" : {
                 const target_id = interaction.options.getString('member');
@@ -97,7 +97,7 @@ export default {
                 ))
                     .filter(x => x.name.includes(focused.value));
 
-                return interaction.respond(filtered.slice(25));
+                return interaction.respond(filtered.slice(0,25));
             }
         }
     },

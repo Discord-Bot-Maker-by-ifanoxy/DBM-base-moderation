@@ -49,7 +49,7 @@ exports.default = {
         .setName('member')
         .setDescription('Select member')
         .setRequired(true))),
-    autocomplete(client, plugin, interaction) {
+    autocomplete(client, interaction, plugin) {
         return __awaiter(this, void 0, void 0, function* () {
             const focused = interaction.options.getFocused(true);
             switch (focused.name) {
@@ -65,7 +65,7 @@ exports.default = {
                         });
                     }))))
                         .filter(x => x.name.includes(focused.value));
-                    return interaction.respond(filtered.slice(25));
+                    return interaction.respond(filtered.slice(0, 25));
                 }
                 case "warning": {
                     const target_id = interaction.options.getString('member');
@@ -80,7 +80,7 @@ exports.default = {
                         });
                     }))))
                         .filter(x => x.name.includes(focused.value));
-                    return interaction.respond(filtered.slice(25));
+                    return interaction.respond(filtered.slice(0, 25));
                 }
             }
         });

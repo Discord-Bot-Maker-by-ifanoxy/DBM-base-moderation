@@ -32,7 +32,7 @@ export default {
             bans
                 .map(x => ({ name: `${x.user.username}`, value: x.user.id}))
                 .filter(x => x.name.includes(focused))
-                .slice(25)
+                .slice(0, 25)
         );
     },
     async execute(client: DBMClient, interaction: ChatInputCommandInteraction)

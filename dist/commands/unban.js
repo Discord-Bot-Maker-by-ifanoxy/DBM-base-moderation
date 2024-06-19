@@ -31,7 +31,7 @@ exports.default = {
             return interaction.respond(bans
                 .map(x => ({ name: `${x.user.username}`, value: x.user.id }))
                 .filter(x => x.name.includes(focused))
-                .slice(25));
+                .slice(0, 25));
         });
     },
     execute(client, interaction) {

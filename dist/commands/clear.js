@@ -22,11 +22,11 @@ exports.default = {
         .addNumberOption(opt => opt
         .setName('message-count')
         .setDescription('number of messages to delete')
-        .setRequired(false)),
+        .setRequired(true)),
     execute(client, interaction) {
         return __awaiter(this, void 0, void 0, function* () {
             const nb = interaction.options.getNumber('message-count');
-            return interaction.channel.bulkDelete(nb)
+            return (yield client.channels.fetch(interaction.channelId)).bulkDelete(nb)
                 .then(() => {
                 return interaction.reply({
                     embeds: [(0, replacerArray_1.replaceEmbed)(this.embeds.clear, ['{number}'], [nb])]

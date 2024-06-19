@@ -2,7 +2,7 @@ import {
     APIEmbed,
     ChatInputCommandInteraction,
     PermissionsBitField,
-    SlashCommandBuilder,
+    SlashCommandBuilder, TextChannel,
 } from "discord.js";
 import {DBMClient} from "../../lib/structures/DBMClient";
 import {replaceEmbed} from "../src/functions/replacerArray";
@@ -20,13 +20,13 @@ export default {
             opt => opt
                 .setName('message-count')
                 .setDescription('number of messages to delete')
-                .setRequired(false)
+                .setRequired(true)
         ),
     async execute(client: DBMClient, interaction: ChatInputCommandInteraction)
     {
         const nb = interaction.options.getNumber('message-count')
 
-        return interaction.channel.bulkDelete(nb)
+        return (await client.channels.fetch(interaction.channelId) as TextChannel).bulkDelete(nb)
             .then(() => {
                 return interaction.reply({
                     embeds: [ replaceEmbed(this.embeds.clear, ['{number}'], [nb]) ]

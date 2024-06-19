@@ -1,0 +1,18 @@
+{
+  "already_lock": {
+    "description": "This channel is already lock",
+    "color": 15879747
+  },
+  "error": {
+    "description": "There is an error locking this channel",
+    "color": 15879747
+  },
+  "locked_everyone": {
+    "color": 14090105,
+    "description": "The channel {channel} has been locked"
+  },
+  "locked_role": {
+    "color": 14090105,
+    "description": "The channel {channel} has been locked for the role {role}"
+  }
+}

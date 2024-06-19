@@ -1,0 +1,18 @@
+{
+  "remove_failed": {
+    "color": 15879747,
+    "description": "There was an error removing the warn"
+  },
+  "deleted_successfully": {
+    "color": 14090105,
+    "description": "The warn was successfully removed from the member"
+  },
+  "user_dont_have_warn": {
+    "color": 14090105,
+    "description": "This user don't has warn"
+  },
+  "warn_list": {
+    "color": 14090105,
+    "title": "List of {number} warns from {username}"
+  }
+}

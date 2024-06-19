@@ -1,0 +1,14 @@
+{
+  "has_lower_perms": {
+    "description": "You have lower permissions than the member you wish to sanction",
+    "color": 15879747
+  },
+  "cannot_ban": {
+    "description": "You can't ban this member",
+    "color": 15879747
+  },
+  "baned": {
+    "color": 14090105,
+    "description": "member {member} was baned for the following reason *{reason}*"
+  }
+}

@@ -101,7 +101,7 @@ export default {
             }
         }
     },
-    async execute(client: DBMClient, plugin: Plugin, interaction: ChatInputCommandInteraction)
+    async execute(client: DBMClient, interaction: ChatInputCommandInteraction, plugin: Plugin)
     {
         switch (interaction.options.getSubcommand())
         {

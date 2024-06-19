@@ -29,7 +29,7 @@ exports.default = {
         .setDescription('the reason for the warning')
         .setRequired(true)
         .setMaxLength(512)),
-    execute(client, plugin, interaction) {
+    execute(client, interaction, plugin) {
         return __awaiter(this, void 0, void 0, function* () {
             const modMember = yield interaction.guild.members.fetch(interaction.user.id);
             const targetMember = yield interaction.guild.members.fetch(interaction.options.getUser('member'));

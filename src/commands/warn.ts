@@ -25,7 +25,7 @@ export default {
                 .setRequired(true)
                 .setMaxLength(512)
         ),
-    async execute(client: DBMClient, plugin: Plugin, interaction: ChatInputCommandInteraction)
+    async execute(client: DBMClient, interaction: ChatInputCommandInteraction, plugin: Plugin)
     {
         const modMember = await interaction.guild.members.fetch(interaction.user.id);
         const targetMember = await interaction.guild.members.fetch(interaction.options.getUser('member'));

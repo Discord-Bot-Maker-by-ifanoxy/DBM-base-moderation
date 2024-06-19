@@ -85,7 +85,7 @@ exports.default = {
             }
         });
     },
-    execute(client, plugin, interaction) {
+    execute(client, interaction, plugin) {
         return __awaiter(this, void 0, void 0, function* () {
             switch (interaction.options.getSubcommand()) {
                 case 'remove': {

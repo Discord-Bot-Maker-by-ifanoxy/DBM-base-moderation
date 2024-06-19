@@ -38,7 +38,7 @@ export default {
                     { name: 'Previous 7 days', value: 7 * 24 * 3600 },
                 )
         ),
-    async execute(client: DBMClient, interaction: ChatInputCommandInteraction)
+    async execute(client: DBMClient, plugin: Plugin, interaction: ChatInputCommandInteraction)
     {
         const targetMember = await interaction.guild.members.fetch(interaction.options.getUser('member'));
         const modMember = await interaction.guild.members.fetch(interaction.user.id);

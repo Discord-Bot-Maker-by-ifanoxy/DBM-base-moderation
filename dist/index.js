@@ -1,8 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class default_1 {
+const warns_1 = require("./src/tables/warns");
+class Plugin {
     constructor(client) {
         this.client = client;
+        this.loadTables();
+    }
+    loadTables() {
+        this.warns = (0, warns_1.loadWarnsTables)(this.client.database);
     }
 }
-exports.default = default_1;
+exports.default = Plugin;

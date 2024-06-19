@@ -40,6 +40,18 @@ export default {
         )
         .addSubcommand(
             sub => sub
+                .setName('remove-all')
+                .setDescription('Remove member\'s warn')
+                .addStringOption(
+                    opt => opt
+                        .setName('member')
+                        .setDescription('Select member')
+                        .setRequired(true)
+                        .setAutocomplete(true)
+                )
+        )
+        .addSubcommand(
+            sub => sub
                 .setName('list')
                 .setDescription('List of all warnings of a member')
                 .addUserOption(
@@ -100,6 +112,14 @@ export default {
 
                 if (res === 0)return interaction.reply({ embeds: [ this.embeds.remove_failed ]});
                 else return interaction.reply({ embeds: [ this.embeds.deleted_successfully ]});
+            }
+            case 'remove-all' : {
+                const memberId = interaction.options.getString('member');
+
+                const res = await plugin.warns.destroy({ where: { target_id: memberId }});
+
+                if (res === 0)return interaction.reply({ embeds: [ this.embeds.user_dont_have_warn ]});
+                else return interaction.reply({ embeds: [ replaceEmbed(this.embeds.deleted_all_successfully, ['{number}'], [res]) ]});
             }
             case 'list' : {
                 const user = interaction.options.getUser('member');

@@ -7,6 +7,10 @@
     "color": 14090105,
     "description": "The warn was successfully removed from the member"
   },
+  "deleted_all_successfully": {
+    "color": 14090105,
+    "description": "**{number}** warn was successfully removed from the member"
+  },
   "user_dont_have_warn": {
     "color": 14090105,
     "description": "This user don't has warn"

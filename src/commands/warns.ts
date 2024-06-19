@@ -91,7 +91,7 @@ export default {
                 const filtered = (await Promise.all(
                     warnsData
                         .map(async x => ({
-                            name: `${(await idToUser(client, x.target_id)).username} (${x.created_date.toUTCString()}) - ${x.reason}`.slice(100),
+                            name: `${(await idToUser(client, x.target_id)).username} (${x.created_date.toUTCString()}) - ${x.reason}`.slice(0, 100),
                             value: x.id
                         }))
                 ))

@@ -75,7 +75,7 @@ exports.default = {
                     const filtered = (yield Promise.all(warnsData
                         .map((x) => __awaiter(this, void 0, void 0, function* () {
                         return ({
-                            name: `${(yield (0, idToUser_1.idToUser)(client, x.target_id)).username} (${x.created_date.toUTCString()}) - ${x.reason}`.slice(100),
+                            name: `${(yield (0, idToUser_1.idToUser)(client, x.target_id)).username} (${x.created_date.toUTCString()}) - ${x.reason}`.slice(0, 100),
                             value: x.id
                         });
                     }))))

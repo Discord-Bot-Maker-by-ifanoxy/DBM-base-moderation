@@ -27,7 +27,7 @@ function pagination(client_1, data_1, interaction_1, embed_1) {
                     .setDisabled(true),
                 new discord_js_1.ButtonBuilder()
                     .setEmoji('▶️')
-                    .setDisabled(d || actual_page == max_page - 1)
+                    .setDisabled(d || actual_page >= max_page - 1)
                     .setStyle(discord_js_1.ButtonStyle.Secondary)
                     .setCustomId('[no-check]right')
             ])];
@@ -38,9 +38,10 @@ function pagination(client_1, data_1, interaction_1, embed_1) {
         const message = yield (interaction instanceof discord_js_1.ChatInputCommandInteraction ? interaction.reply(opt) : interaction.update(opt));
         const res = message.awaitMessageComponent({
             time: 120 * 60 * 1000,
+            componentType: discord_js_1.ComponentType.Button
         });
         res.then(i => {
-            pagination(client, data, interaction, embed, actual_page + (i.customId === '[no-check]left' ? -1 : 1));
+            pagination(client, data, i, embed, actual_page + (i.customId === '[no-check]left' ? -1 : 1));
         });
         res.catch(() => {
             message.edit({ components: createComponents(true) });

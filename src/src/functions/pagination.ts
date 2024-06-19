@@ -4,8 +4,11 @@ import {
     ButtonBuilder,
     ButtonInteraction,
     ButtonStyle,
-    ChatInputCommandInteraction, EmbedBuilder,
-    InteractionReplyOptions, InteractionUpdateOptions
+    ChatInputCommandInteraction,
+    ComponentType,
+    EmbedBuilder,
+    InteractionReplyOptions,
+    InteractionUpdateOptions
 } from "discord.js";
 
 export async function pagination(
@@ -29,7 +32,7 @@ export async function pagination(
             .setDisabled(true),
         new ButtonBuilder()
             .setEmoji('▶️')
-            .setDisabled(d || actual_page == max_page - 1)
+            .setDisabled(d || actual_page >= max_page - 1)
             .setStyle(ButtonStyle.Secondary)
             .setCustomId('[no-check]right')
     ])];
@@ -42,10 +45,11 @@ export async function pagination(
 
     const res = message.awaitMessageComponent({
         time: 120 * 60 * 1000,
+        componentType: ComponentType.Button
     });
 
     res.then(i => {
-        pagination(client, data, interaction, embed, actual_page + (i.customId === '[no-check]left' ? -1 : 1));
+        pagination(client, data, i, embed, actual_page + (i.customId === '[no-check]left' ? -1 : 1));
     });
 
     res.catch(() => {

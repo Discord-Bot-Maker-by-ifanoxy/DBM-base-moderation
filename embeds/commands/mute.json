@@ -1,0 +1,18 @@
+{
+  "has_lower_perms": {
+    "description": "You have lower permissions than the member you wish to sanction",
+    "color": 15879747
+  },
+  "cannot_mute": {
+    "description": "You can't mute this member",
+    "color": 15879747
+  },
+  "unresolved_time": {
+    "description": "There is a syntax error when entering the time, here is an example: 10h 20min",
+    "color": 15879747
+  },
+  "muted": {
+    "color": 14090105,
+    "description": "member {member} is muted until {time} for reason *{reason}*"
+  }
+}

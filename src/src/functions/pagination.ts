@@ -19,7 +19,7 @@ export async function pagination(
     const createComponents = (d: boolean = false) => [new ActionRowBuilder<ButtonBuilder>().addComponents([
         new ButtonBuilder()
             .setEmoji('◀️')
-            .setDisabled(d || actual_page == 2)
+            .setDisabled(d || actual_page <= 2)
             .setStyle(ButtonStyle.Secondary)
             .setCustomId('[no-check]left'),
         new ButtonBuilder()
@@ -34,7 +34,7 @@ export async function pagination(
             .setCustomId('[no-check]right')
     ])];
     const opt: InteractionUpdateOptions & InteractionReplyOptions = {
-        embeds: [ embed.setFields(data.slice((actual_page - 1) * 25 + actual_page * 25)) ],
+        embeds: [ embed.setFields(data.slice((actual_page - 1) * 25,  actual_page * 25)) ],
         components: createComponents()
     };
 

@@ -14,4 +14,5 @@
 - unban <member>
 - lock <?role> <?channel>
 - unlock <?role> <?channel>
+- clear <?message-count>
 ```

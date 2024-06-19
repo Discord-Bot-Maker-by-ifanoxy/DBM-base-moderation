@@ -1,0 +1,18 @@
+{
+  "already_unlock": {
+    "description": "This channel is already unlock",
+    "color": 15879747
+  },
+  "error": {
+    "description": "There is an error unlocking this channel",
+    "color": 15879747
+  },
+  "unlocked_everyone": {
+    "color": 14090105,
+    "description": "The channel {channel} has been unlocked"
+  },
+  "unlocked_role": {
+    "color": 14090105,
+    "description": "The channel {channel} has been unlocked for the role {role}"
+  }
+}

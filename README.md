@@ -12,4 +12,6 @@
 - softban <member> <?reason>
 - ban <member> <?delete-message> <?reason>
 - unban <member>
+- lock <?role> <?channel>
+- unlock <?role> <?channel>
 ```

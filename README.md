@@ -6,4 +6,5 @@
 - deafen <member> <?reason>
 - undeafen <member>
 - kick <member> <?reason>
-- mute <member <duration> <?reason>
+- mute <member> <duration> <?reason>
+- softban <member> <?reason>

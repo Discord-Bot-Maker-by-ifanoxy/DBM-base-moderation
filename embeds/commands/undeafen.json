@@ -1,0 +1,14 @@
+{
+  "not_in_voice": {
+    "description": "This member is not in voice",
+    "color": 15879747
+  },
+  "already_deaf": {
+    "description": "This member is not deafen",
+    "color": 15879747
+  },
+  "undeafened": {
+    "color": 14090105,
+    "description": "Member {member} was undeafened"
+  }
+}

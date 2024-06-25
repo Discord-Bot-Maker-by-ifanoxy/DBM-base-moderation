@@ -24,7 +24,7 @@ exports.default = {
         .setDescription('member to unban')
         .setAutocomplete(true)
         .setRequired(true)),
-    autocomplete(client, plugin, interaction) {
+    autocomplete(client, interaction, plugin) {
         return __awaiter(this, void 0, void 0, function* () {
             const bans = yield interaction.guild.bans.fetch();
             const focused = interaction.options.getFocused();

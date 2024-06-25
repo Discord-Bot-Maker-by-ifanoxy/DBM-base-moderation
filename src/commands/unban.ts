@@ -24,7 +24,7 @@ export default {
                 .setAutocomplete(true)
                 .setRequired(true)
         ),
-    async autocomplete(client: DBMClient, plugin: Plugin, interaction: AutocompleteInteraction) {
+    async autocomplete(client: DBMClient, interaction: AutocompleteInteraction, plugin: Plugin) {
         const bans = await interaction.guild.bans.fetch();
         const focused = interaction.options.getFocused();
 

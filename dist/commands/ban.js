@@ -34,7 +34,7 @@ exports.default = {
         .setDescription('the reason for the ban')
         .setRequired(false)
         .addChoices({ name: 'Previous Hour', value: 3600 }, { name: 'Previous 6 Hours', value: 6 * 3600 }, { name: 'Previous 12 Hours', value: 12 * 3600 }, { name: 'Previous 24 Hours', value: 24 * 3600 }, { name: 'Previous 3 days', value: 3 * 24 * 3600 }, { name: 'Previous 7 days', value: 7 * 24 * 3600 })),
-    execute(client, plugin, interaction) {
+    execute(client, interaction, plugin) {
         return __awaiter(this, void 0, void 0, function* () {
             var _a;
             const targetMember = yield interaction.guild.members.fetch(interaction.options.getUser('member'));

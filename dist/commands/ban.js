@@ -16,7 +16,7 @@ const embeds = require('../../embeds/commands/ban.json');
 exports.default = {
     embeds: embeds,
     builder: new discord_js_1.SlashCommandBuilder()
-        .setName('tban')
+        .setName('ban')
         .setDescription('ban a member')
         .setDefaultMemberPermissions(discord_js_1.PermissionsBitField.Flags.DeafenMembers)
         .setDMPermission(false)

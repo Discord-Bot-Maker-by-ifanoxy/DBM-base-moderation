@@ -7,7 +7,7 @@ const embeds = require('../../embeds/commands/ban.json');
 export default {
     embeds: embeds as { [k in keyof typeof embeds]: APIEmbed },
     builder: new SlashCommandBuilder()
-        .setName('tban')
+        .setName('ban')
         .setDescription('ban a member')
         .setDefaultMemberPermissions(PermissionsBitField.Flags.DeafenMembers)
         .setDMPermission(false)
